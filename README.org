@@ -1,0 +1,3 @@
+#+title: Flycheck-eglot
+Hacky eglot support in flycheck.
+This is forked from [[https://github.com/hlissner/doom-emacs/blob/master/modules/tools/lsp/autoload/flycheck-eglot.el][doom-emacs]] for adjusted to use on my emacs config.
