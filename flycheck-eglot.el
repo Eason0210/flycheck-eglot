@@ -58,6 +58,10 @@ CALLBACK is the function that we need to call when we are done, on all the error
   (when eglot--managed-mode
     (flymake-mode -1)
     (when-let ((current-checker (flycheck-get-checker-for-buffer)))
+      (when (or (equal current-checker 'c/c++-clang)
+                (equal current-checker 'rust-cargo)
+                (equal current-checker 'python-pycompile))
+        (flycheck-disable-checker current-checker))
       (unless (equal current-checker 'eglot)
         (flycheck-add-next-checker 'eglot current-checker)))
     (flycheck-add-mode 'eglot major-mode)
